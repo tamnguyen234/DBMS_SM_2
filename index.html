@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Storage Management VLab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .kicker, .block-title { font-family: 'IBM Plex Mono', monospace; }
+  </style>
+</head>
+<body>
+  <div class="bg-shape shape-a"></div>
+  <div class="bg-shape shape-b"></div>
+
+  <main class="container py-4 py-lg-5">
+    <header class="hero-panel mb-4 mb-lg-5">
+      <p class="kicker mb-2">Bộ môn Hệ Quản Trị CSDL</p>
+      <h1 class="display-title">Mô phỏng Các cơ chế Tổ chức File (Block)</h1>
+      <p class="lead-copy mb-0">
+        Chương trình demo trực quan so sánh 4 kỹ thuật tổ chức dữ liệu: <strong>Heap, Sequential, Multitable Clustering</strong> và <strong>Partitioning</strong>. Thực hiện các thao tác chèn, truy vấn dữ liệu học sinh và theo dõi trực tiếp chi phí truy xuất blocks (blocks read) cùng thời gian thực thi.
+      </p>
+    </header>
+
+    <ul class="nav nav-pills app-tabs mb-4" id="appTabs" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="query-tab" data-bs-toggle="pill" data-bs-target="#query" type="button" role="tab" aria-controls="query" aria-selected="true">1. Demo Truy vấn</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="insert-tab" data-bs-toggle="pill" data-bs-target="#insert" type="button" role="tab" aria-controls="insert" aria-selected="false">2. Demo Thêm Bản ghi</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="dashboard-tab" data-bs-toggle="pill" data-bs-target="#dashboard" type="button" role="tab" aria-controls="dashboard" aria-selected="false">3. Thống kê & So sánh</button>
+      </li>
+    </ul>
+
+    <div class="tab-content" id="appTabContent">
+      <div class="tab-pane fade show active" id="query" role="tabpanel" aria-labelledby="query-tab" tabindex="0">
+        <div class="card app-card">
+          <div class="card-body p-4">
+            <h2 class="section-title">Demo Truy vấn</h2>
+            <p class="section-subtitle">Nhập điều kiện truy vấn để tìm kiếm sinh viên theo ID, tên, lớp, hoặc học kỳ.</p>
+            
+            <div class="row g-3 mb-4">
+              <div class="col-lg-3">
+                <label class="form-label">ID Sinh viên</label>
+                <input class="form-control" id="queryStudentId" placeholder="VD: 74680 (empty để bỏ qua)">
+              </div>
+              <div class="col-lg-3">
+                <label class="form-label">Tên Sinh viên</label>
+                <input class="form-control" id="queryStudentName" placeholder="VD: Nguyễn (empty để bỏ qua)">
+              </div>
+              <div class="col-lg-2">
+                <label class="form-label">Lớp học</label>
+                <select class="form-select" id="queryClassName">
+                  <option value="">-- Tất cả --</option>
+                  <option value="K20A">K20A</option>
+                  <option value="K20B">K20B</option>
+                  <option value="K20C">K20C</option>
+                  <option value="K21A">K21A</option>
+                  <option value="K21B">K21B</option>
+                  <option value="K21C">K21C</option>
+                  <option value="K22A">K22A</option>
+                  <option value="K22B">K22B</option>
+                  <option value="K22C">K22C</option>
+                  <option value="K23A">K23A</option>
+                  <option value="K23B">K23B</option>
+                  <option value="K23C">K23C</option>
+                  <option value="K24A">K24A</option>
+                  <option value="K24B">K24B</option>
+                  <option value="K24C">K24C</option>
+                  <option value="K25A">K25A</option>
+                  <option value="K25B">K25B</option>
+                  <option value="K25C">K25C</option>
+                  <option value="K26A">K26A</option>
+                  <option value="K26B">K26B</option>
+                  <option value="K26C">K26C</option>
+                  <option value="K27A">K27A</option>
+                  <option value="K27B">K27B</option>
+                  <option value="K27C">K27C</option>
+                  <option value="K28A">K28A</option>
+                  <option value="K28B">K28B</option>
+                  <option value="K28C">K28C</option>
+                  <option value="K29A">K29A</option>
+                  <option value="K29B">K29B</option>
+                  <option value="K29C">K29C</option>
+                  <option value="K30A">K30A</option>
+                  <option value="K30B">K30B</option>
+                  <option value="K30C">K30C</option>
+                  <option value="K31A">K31A</option>
+                  <option value="K31B">K31B</option>
+                  <option value="K31C">K31C</option>
+                  <option value="K32A">K32A</option>
+                  <option value="K32B">K32B</option>
+                  <option value="K32C">K32C</option>
+                  <option value="K33A">K33A</option>
+                  <option value="K33B">K33B</option>
+                  <option value="K33C">K33C</option>
+                  <option value="K34A">K34A</option>
+                  <option value="K34B">K34B</option>
+                  <option value="K34C">K34C</option>
+                  <option value="K35A">K35A</option>
+                  <option value="K35B">K35B</option>
+                  <option value="K35C">K35C</option>
+                </select>
+              </div>
+              <div class="col-lg-2">
+                <label class="form-label">Học kỳ</label>
+                <select class="form-select" id="querySemester">
+                  <option value="">-- Tất cả --</option>
+                  <option value="2023A">2023A</option>
+                  <option value="2023B">2023B</option>
+                  <option value="2024A">2024A</option>
+                  <option value="2024B">2024B</option>
+                </select>
+              </div>
+              <div class="col-lg-2 d-flex align-items-end">
+                <button class="btn btn-primary w-100" type="button" id="queryBtn" style="height: 48px;">Truy vấn</button>
+              </div>
+            </div>
+
+            <hr class="my-4">
+            <h3 class="section-title">Trực quan hóa Phân bổ Block</h3>
+            <p id="queryHint" class="section-subtitle mb-3"></p>
+            <div id="queryVisualContainers" class="row g-4 mb-4"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="insert" role="tabpanel" aria-labelledby="insert-tab" tabindex="0">
+        <div class="card app-card">
+          <div class="card-body p-4">
+            <h2 class="section-title">Demo Thêm Bản ghi</h2>
+            <p class="section-subtitle">Nhập một bản ghi sinh viên để chèn vào 4 cấu trúc dữ liệu và theo dõi thay đổi block ngay trên giao diện.</p>
+
+            <div class="row g-3 mb-4">
+              <div class="col-lg-4">
+                <label class="form-label">Tên Sinh viên</label>
+                <input class="form-control" id="insertStudentName" required value="Võ Minh Tuấn">
+              </div>
+              <div class="col-lg-4">
+                <label class="form-label">Lớp học</label>
+                <select class="form-select" id="insertClassName" required>
+                  <option value="">-- Chọn lớp --</option>
+                  <option value="K20A">K20A</option>
+                  <option value="K20B">K20B</option>
+                  <option value="K20C">K20C</option>
+                  <option value="K21A">K21A</option>
+                  <option value="K21B">K21B</option>
+                  <option value="K21C">K21C</option>
+                  <option value="K22A">K22A</option>
+                  <option value="K22B">K22B</option>
+                  <option value="K22C">K22C</option>
+                  <option value="K23A">K23A</option>
+                  <option value="K23B">K23B</option>
+                  <option value="K23C">K23C</option>
+                  <option value="K24A">K24A</option>
+                  <option value="K24B">K24B</option>
+                  <option value="K24C">K24C</option>
+                  <option value="K25A">K25A</option>
+                  <option value="K25B">K25B</option>
+                  <option value="K25C">K25C</option>
+                  <option value="K26A">K26A</option>
+                  <option value="K26B">K26B</option>
+                  <option value="K26C">K26C</option>
+                  <option value="K27A">K27A</option>
+                  <option value="K27B">K27B</option>
+                  <option value="K27C">K27C</option>
+                  <option value="K28A">K28A</option>
+                  <option value="K28B">K28B</option>
+                  <option value="K28C">K28C</option>
+                  <option value="K29A">K29A</option>
+                  <option value="K29B">K29B</option>
+                  <option value="K29C">K29C</option>
+                  <option value="K30A">K30A</option>
+                  <option value="K30B">K30B</option>
+                  <option value="K30C">K30C</option>
+                  <option value="K31A">K31A</option>
+                  <option value="K31B">K31B</option>
+                  <option value="K31C">K31C</option>
+                  <option value="K32A">K32A</option>
+                  <option value="K32B">K32B</option>
+                  <option value="K32C">K32C</option>
+                  <option value="K33A">K33A</option>
+                  <option value="K33B">K33B</option>
+                  <option value="K33C">K33C</option>
+                  <option value="K34A">K34A</option>
+                  <option value="K34B">K34B</option>
+                  <option value="K34C">K34C</option>
+                  <option value="K35A">K35A</option>
+                  <option value="K35B">K35B</option>
+                  <option value="K35C">K35C</option>
+                </select>
+              </div>
+              <div class="col-lg-2">
+                <label class="form-label">Học kỳ</label>
+                <select class="form-select" id="insertSemester" required>
+                  <option value="">-- Chọn kỳ --</option>
+                  <option value="2023A">2023A</option>
+                  <option value="2023B">2023B</option>
+                  <option value="2024A">2024A</option>
+                  <option value="2024B">2024B</option>
+                </select>
+              </div>
+              <div class="col-lg-2 d-flex align-items-end">
+                <button class="btn btn-success w-100" type="button" id="insertBtn" style="height: 48px;">Thêm Bản ghi</button>
+              </div>
+            </div>
+
+            <hr class="my-4">
+            <h3 class="section-title">Trực quan hóa Phân bổ Block</h3>
+            <div id="insertLogicNotes" class="row g-3 mb-4"></div>
+            <div id="insertVisualContainers" class="row g-4 mb-4"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab" tabindex="0">
+        <div class="card app-card">
+          <div class="card-body p-4">
+            <h2 class="section-title">Thống kê và So sánh</h2>
+            <p class="section-subtitle">Dữ liệu cập nhật từ các lần chạy ở tab 1 (truy vấn) và tab 2 (thêm bản ghi).</p>
+
+            <h3 class="section-title">Thống kê Truy vấn</h3>
+            <div class="table-responsive mb-4">
+              <table class="table table-hover align-middle">
+                <thead>
+                  <tr>
+                    <th>Kiểu tổ chức file</th>
+                    <th>Block đọc bảng students</th>
+                    <th>Block đọc bảng enrollments</th>
+                    <th>Tổng block đọc</th>
+                    <th>Tổng thời gian chạy (ms)</th>
+                  </tr>
+                </thead>
+                <tbody id="queryStatsBody"></tbody>
+              </table>
+            </div>
+
+            <h3 class="section-title">Thống kê Thêm Bản ghi</h3>
+            <div class="table-responsive">
+              <table class="table table-hover align-middle">
+                <thead>
+                  <tr>
+                    <th>Kiểu tổ chức file</th>
+                    <th>Block đọc bảng students</th>
+                    <th>Block đọc bảng enrollments</th>
+                    <th>Tổng block đọc</th>
+                    <th>Tổng thời gian chạy (ms)</th>
+                  </tr>
+                </thead>
+                <tbody id="insertStatsBody"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,74 +1,64 @@
-# Demo Quản Lý Lưu Trữ
+# Storage Management VLab
 
-Mô phỏng bằng Python cho bốn kiểu tổ chức file thường dùng trong quản lý lưu trữ của hệ quản trị CSDL:
+Ung dung web mo phong 4 kieu to chuc file trong mon Storage Management:
 
-- Tệp Heap
-- Tệp tuần tự
-- Gom cụm đa bảng
-- Phân vùng theo học kỳ
+- Heap
+- Sequential
+- Multitable Clustering
+- Partitioning
 
-## Cấu Trúc Dự Án
+He thong gom:
 
-- `data/`: các file TXT có cấu trúc bảng, gồm `students`, `courses` và `enrollments`
-- `models/`: các dataclass cho `Student`, `Course` và `Enrollment`
-- `engines/`: mô phỏng tổ chức file và đếm I/O khối
-- `scripts/`: bộ sinh dataset
-- `benchmarks/`: các hàm so sánh
-- `results/`: lưu báo cáo mỗi lần chạy benchmark
-- `main.py`: điểm vào để chạy demo
+- Backend Flask (`main.py`) doc/ghi du lieu that tu thu muc `data/`
+- Frontend SPA (`index.html`, `app.js`, `styles.css`) de mo phong va truc quan block
 
-## Sinh Dataset
+## Tinh nang hien co
 
-```bash
-python scripts/generate_dataset.py --output-dir data --student-count 1000000 --course-count 500 --enrollments-per-student 1
-```
+1. Demo Truy van
+- Truy van theo `student_id`, `full_name`, `class_name`, `semester`
+- Hien thi block duoc doc va thoi gian mo phong tren 4 kieu to chuc
 
-Lệnh này sẽ tạo:
+2. Demo Them Ban ghi
+- Them 1 ban ghi moi vao du lieu that qua API `/api/insert`
+- Cap nhat truc quan block va thong ke sau moi lan chen
 
-- `data/students.txt`
-- `data/courses.txt`
-- `data/enrollments.txt`
+3. Thong ke va So sanh
+- Tong hop chi so blocks read va execution time cho truy van/them du lieu
 
-## Chạy Demo
+## Cau hinh quan trong
 
-### Demo giao diện Streamlit
+- Block capacity frontend: `1 block = 5 records`
+- Sequential demo su dung muc lap day 4 records/block de minh hoa free slot
+- Demo dataset tra ve tu API `/api/dataset` (lay mau tu du lieu that de giu giao dien muot)
+
+## Chay du an
+
+1. Cai dependencies:
 
 ```bash
 pip install -r requirements.txt
-streamlit run streamlit_app.py
 ```
 
-Giao diện có các tab riêng cho Heap, Sequential, Clustering, Partitioning và một tab so sánh tổng hợp. Mỗi tab đều có phần trực quan hóa block trước/sau khi chèn và phần demo tra cứu.
-
-### Demo dòng lệnh (CLI)
+2. Chay server:
 
 ```bash
-python main.py --data-dir data --student-id 1000
+python main.py
 ```
 
-CLI dùng `rich` để in bảng I/O trực quan hơn trên terminal.
+3. Mo trinh duyet:
 
-Bộ lọc học kỳ tùy chọn khi tra cứu bản ghi đăng ký học phần:
-
-```bash
-python main.py --data-dir data --student-id 1000 --semester 2024A
+```text
+http://127.0.0.1:8000
 ```
 
-Mỗi lần chạy, chương trình tự động ghi báo cáo vào thư mục `results/`:
+## Du lieu
 
-- `results/bao_cao_benchmark_YYYYMMDD_HHMMSS.txt`: báo cáo đầy đủ của lần chạy hiện tại
-- `results/bao_cao_benchmark_moi_nhat.txt`: báo cáo đầy đủ mới nhất (được ghi đè mỗi lần chạy)
+- `data/students.txt`: thong tin sinh vien
+- `data/enrollments.txt`: thong tin dang ky hoc
+- `data/courses.txt`: thong tin hoc phan
 
-Bạn có thể đổi thư mục lưu kết quả bằng tham số:
+Script khoi phuc du lieu mau:
 
-```bash
-python main.py --data-dir data --student-id 1000 --results-dir results
+```powershell
+./restore_backup_data.ps1
 ```
-
-Khi truyền `--semester`, cách tổ chức phân vùng chỉ quét đúng phân vùng của học kỳ đó, nên chênh lệch I/O sẽ dễ quan sát hơn.
-
-## Ghi Chú
-
-- Kích thước khối được mô phỏng bằng `--block-capacity`.
-- Mỗi truy vấn đều trả về số khối đã đọc, đây là chỉ số chi phí I/O chính.
-- `main.py` cũng hiển thị phần xem trước trạng thái khối trước và sau khi chèn trên bố cục Heap.

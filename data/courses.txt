@@ -1,0 +1,501 @@
+course_id,course_name,credits,dept_name
+270,Phát triển web 0270,3,DS
+500,Phát triển web 0500,5,IS
+116,Giải thuật 0116,5,IS
+268,Học máy 0268,5,IS
+132,Cấu trúc dữ liệu 0132,5,IS
+238,Học máy 0238,3,DS
+64,Mạng máy tính 0064,5,CSIT
+191,Hệ cơ sở dữ liệu 0191,4,BA
+91,Hệ cơ sở dữ liệu 0091,4,SE
+310,Phát triển web 0310,3,DS
+452,Cấu trúc dữ liệu 0452,5,IS
+100,Phát triển web 0100,5,IS
+69,Tìm kiếm thông tin 0069,2,AI
+12,Cấu trúc dữ liệu 0012,5,IS
+375,Kỹ nghệ phần mềm 0375,4,BA
+80,Phát triển web 0080,5,CSIT
+223,Hệ điều hành 0223,4,BA
+60,Phát triển web 0060,5,IS
+215,Kỹ nghệ phần mềm 0215,4,BA
+405,Kỹ nghệ phần mềm 0405,2,AI
+281,Hệ cơ sở dữ liệu 0281,2,CS
+41,Hệ cơ sở dữ liệu 0041,2,CS
+189,Tìm kiếm thông tin 0189,2,AI
+491,Hệ cơ sở dữ liệu 0491,4,SE
+382,Cấu trúc dữ liệu 0382,3,DS
+209,Tìm kiếm thông tin 0209,2,CS
+235,Kỹ nghệ phần mềm 0235,4,SE
+322,Cấu trúc dữ liệu 0322,3,IT
+386,Giải thuật 0386,3,IT
+175,Kỹ nghệ phần mềm 0175,4,BA
+232,Cấu trúc dữ liệu 0232,5,CSIT
+97,Toán rời rạc 0097,2,CS
+77,Toán rời rạc 0077,2,AI
+342,Cấu trúc dữ liệu 0342,3,DS
+468,Học máy 0468,5,IS
+458,Học máy 0458,3,IT
+162,Cấu trúc dữ liệu 0162,3,IT
+355,Kỹ nghệ phần mềm 0355,4,SE
+10,Phát triển web 0010,3,IT
+190,Phát triển web 0190,3,DS
+88,Học máy 0088,5,CSIT
+35,Kỹ nghệ phần mềm 0035,4,SE
+339,Tìm kiếm thông tin 0339,4,SE
+45,Kỹ nghệ phần mềm 0045,2,AI
+371,Hệ cơ sở dữ liệu 0371,4,SE
+3,Hệ điều hành 0003,4,SE
+361,Hệ cơ sở dữ liệu 0361,2,CS
+312,Cấu trúc dữ liệu 0312,5,CSIT
+101,Hệ cơ sở dữ liệu 0101,2,AI
+206,Giải thuật 0206,3,DS
+37,Toán rời rạc 0037,2,AI
+249,Tìm kiếm thông tin 0249,2,CS
+185,Kỹ nghệ phần mềm 0185,2,CS
+347,Toán rời rạc 0347,4,SE
+359,Tìm kiếm thông tin 0359,4,BA
+426,Giải thuật 0426,3,IT
+390,Phát triển web 0390,3,DS
+103,Hệ điều hành 0103,4,BA
+110,Phát triển web 0110,3,DS
+142,Cấu trúc dữ liệu 0142,3,DS
+394,Mạng máy tính 0394,3,IT
+348,Học máy 0348,5,IS
+24,Mạng máy tính 0024,5,CSIT
+308,Học máy 0308,5,IS
+373,Hệ điều hành 0373,2,AI
+417,Toán rời rạc 0417,2,CS
+195,Kỹ nghệ phần mềm 0195,4,SE
+31,Hệ cơ sở dữ liệu 0031,4,BA
+210,Phát triển web 0210,3,IT
+113,Hệ điều hành 0113,2,CS
+479,Tìm kiếm thông tin 0479,4,BA
+354,Mạng máy tính 0354,3,IT
+461,Hệ cơ sở dữ liệu 0461,2,AI
+171,Hệ cơ sở dữ liệu 0171,4,SE
+258,Học máy 0258,3,IT
+207,Toán rời rạc 0207,4,BA
+182,Cấu trúc dữ liệu 0182,3,DS
+93,Hệ điều hành 0093,2,AI
+155,Kỹ nghệ phần mềm 0155,4,SE
+463,Hệ điều hành 0463,4,BA
+434,Mạng máy tính 0434,3,IT
+237,Toán rời rạc 0237,2,AI
+307,Toán rời rạc 0307,4,SE
+442,Cấu trúc dữ liệu 0442,3,IT
+229,Tìm kiếm thông tin 0229,2,AI
+71,Hệ cơ sở dữ liệu 0071,4,BA
+82,Cấu trúc dữ liệu 0082,3,IT
+363,Hệ điều hành 0363,4,SE
+176,Giải thuật 0176,5,CSIT
+30,Phát triển web 0030,3,DS
+300,Phát triển web 0300,5,IS
+332,Cấu trúc dữ liệu 0332,5,IS
+252,Cấu trúc dữ liệu 0252,5,IS
+383,Hệ điều hành 0383,4,BA
+178,Học máy 0178,3,IT
+68,Học máy 0068,5,IS
+377,Toán rời rạc 0377,2,CS
+276,Giải thuật 0276,5,IS
+187,Toán rời rạc 0187,4,SE
+465,Kỹ nghệ phần mềm 0465,2,CS
+466,Giải thuật 0466,3,IT
+43,Hệ điều hành 0043,4,SE
+292,Cấu trúc dữ liệu 0292,5,IS
+476,Giải thuật 0476,5,IS
+242,Cấu trúc dữ liệu 0242,3,IT
+269,Tìm kiếm thông tin 0269,2,AI
+234,Mạng máy tính 0234,3,IT
+478,Học máy 0478,3,DS
+436,Giải thuật 0436,5,IS
+5,Kỹ nghệ phần mềm 0005,2,AI
+33,Hệ điều hành 0033,2,CS
+83,Hệ điều hành 0083,4,SE
+296,Giải thuật 0296,5,CSIT
+498,Học máy 0498,3,IT
+415,Kỹ nghệ phần mềm 0415,4,BA
+203,Hệ điều hành 0203,4,SE
+455,Kỹ nghệ phần mềm 0455,4,BA
+365,Kỹ nghệ phần mềm 0365,2,AI
+481,Hệ cơ sở dữ liệu 0481,2,CS
+494,Mạng máy tính 0494,3,DS
+127,Toán rời rạc 0127,4,BA
+406,Giải thuật 0406,3,DS
+449,Tìm kiếm thông tin 0449,2,CS
+149,Tìm kiếm thông tin 0149,2,AI
+25,Kỹ nghệ phần mềm 0025,2,CS
+63,Hệ điều hành 0063,4,BA
+429,Tìm kiếm thông tin 0429,2,AI
+8,Học máy 0008,5,CSIT
+427,Toán rời rạc 0427,4,SE
+168,Học máy 0168,5,CSIT
+267,Toán rời rạc 0267,4,SE
+130,Phát triển web 0130,3,IT
+217,Toán rời rạc 0217,2,CS
+163,Hệ điều hành 0163,4,SE
+441,Hệ cơ sở dữ liệu 0441,2,CS
+52,Cấu trúc dữ liệu 0052,5,IS
+96,Giải thuật 0096,5,CSIT
+414,Mạng máy tính 0414,3,DS
+450,Phát triển web 0450,3,IT
+446,Giải thuật 0446,3,DS
+346,Giải thuật 0346,3,IT
+20,Phát triển web 0020,5,IS
+44,Mạng máy tính 0044,5,IS
+388,Học máy 0388,5,IS
+247,Toán rời rạc 0247,4,BA
+485,Kỹ nghệ phần mềm 0485,2,AI
+99,Tìm kiếm thông tin 0099,4,SE
+153,Hệ điều hành 0153,2,CS
+317,Toán rời rạc 0317,2,AI
+28,Học máy 0028,5,IS
+499,Tìm kiếm thông tin 0499,4,SE
+128,Học máy 0128,5,CSIT
+133,Hệ điều hành 0133,2,AI
+280,Phát triển web 0280,5,CSIT
+34,Mạng máy tính 0034,3,IT
+240,Phát triển web 0240,5,CSIT
+378,Học máy 0378,3,IT
+447,Toán rời rạc 0447,4,BA
+251,Hệ cơ sở dữ liệu 0251,4,SE
+459,Tìm kiếm thông tin 0459,4,SE
+111,Hệ cơ sở dữ liệu 0111,4,BA
+285,Kỹ nghệ phần mềm 0285,2,AI
+274,Mạng máy tính 0274,3,IT
+250,Phát triển web 0250,3,IT
+408,Học máy 0408,5,CSIT
+23,Hệ điều hành 0023,4,BA
+261,Hệ cơ sở dữ liệu 0261,2,AI
+489,Tìm kiếm thông tin 0489,2,CS
+27,Toán rời rạc 0027,4,SE
+2,Cấu trúc dữ liệu 0002,3,IT
+219,Tìm kiếm thông tin 0219,4,SE
+1,Hệ cơ sở dữ liệu 0001,2,CS
+73,Hệ điều hành 0073,2,CS
+404,Mạng máy tính 0404,5,IS
+399,Tìm kiếm thông tin 0399,4,BA
+473,Hệ điều hành 0473,2,CS
+367,Toán rời rạc 0367,4,BA
+483,Hệ điều hành 0483,4,SE
+497,Toán rời rạc 0497,2,CS
+398,Học máy 0398,3,DS
+297,Toán rời rạc 0297,2,CS
+282,Cấu trúc dữ liệu 0282,3,IT
+15,Kỹ nghệ phần mềm 0015,4,BA
+145,Kỹ nghệ phần mềm 0145,2,CS
+471,Hệ cơ sở dữ liệu 0471,4,BA
+266,Giải thuật 0266,3,IT
+22,Cấu trúc dữ liệu 0022,3,DS
+38,Học máy 0038,3,DS
+70,Phát triển web 0070,3,DS
+326,Giải thuật 0326,3,DS
+424,Mạng máy tính 0424,5,CSIT
+183,Hệ điều hành 0183,4,BA
+301,Hệ cơ sở dữ liệu 0301,2,AI
+6,Giải thuật 0006,3,DS
+330,Phát triển web 0330,3,IT
+109,Tìm kiếm thông tin 0109,2,AI
+259,Tìm kiếm thông tin 0259,4,SE
+98,Học máy 0098,3,IT
+470,Phát triển web 0470,3,DS
+389,Tìm kiếm thông tin 0389,2,AI
+32,Cấu trúc dữ liệu 0032,5,CSIT
+428,Học máy 0428,5,IS
+76,Giải thuật 0076,5,IS
+197,Toán rời rạc 0197,2,AI
+54,Mạng máy tính 0054,3,DS
+341,Hệ cơ sở dữ liệu 0341,2,AI
+79,Tìm kiếm thông tin 0079,4,BA
+260,Phát triển web 0260,5,IS
+412,Cấu trúc dữ liệu 0412,5,IS
+385,Kỹ nghệ phần mềm 0385,2,CS
+362,Cấu trúc dữ liệu 0362,3,IT
+343,Hệ điều hành 0343,4,BA
+58,Học máy 0058,3,IT
+407,Toán rời rạc 0407,4,BA
+379,Tìm kiếm thông tin 0379,4,SE
+331,Hệ cơ sở dữ liệu 0331,4,SE
+391,Hệ cơ sở dữ liệu 0391,4,BA
+108,Học máy 0108,5,IS
+148,Học máy 0148,5,IS
+420,Phát triển web 0420,5,IS
+305,Kỹ nghệ phần mềm 0305,2,CS
+495,Kỹ nghệ phần mềm 0495,4,BA
+340,Phát triển web 0340,5,IS
+9,Tìm kiếm thông tin 0009,2,CS
+368,Học máy 0368,5,CSIT
+278,Học máy 0278,3,DS
+245,Kỹ nghệ phần mềm 0245,2,AI
+144,Mạng máy tính 0144,5,CSIT
+56,Giải thuật 0056,5,CSIT
+349,Tìm kiếm thông tin 0349,2,AI
+199,Tìm kiếm thông tin 0199,4,BA
+7,Toán rời rạc 0007,4,BA
+50,Phát triển web 0050,3,IT
+205,Kỹ nghệ phần mềm 0205,2,AI
+464,Mạng máy tính 0464,5,CSIT
+204,Mạng máy tính 0204,5,IS
+352,Cấu trúc dữ liệu 0352,5,CSIT
+184,Mạng máy tính 0184,5,CSIT
+287,Toán rời rạc 0287,4,BA
+313,Hệ điều hành 0313,2,CS
+437,Toán rời rạc 0437,2,AI
+360,Phát triển web 0360,5,CSIT
+350,Phát triển web 0350,3,DS
+140,Phát triển web 0140,5,IS
+318,Học máy 0318,3,DS
+284,Mạng máy tính 0284,5,IS
+139,Tìm kiếm thông tin 0139,4,SE
+293,Hệ điều hành 0293,2,AI
+440,Phát triển web 0440,5,CSIT
+75,Kỹ nghệ phần mềm 0075,4,SE
+72,Cấu trúc dữ liệu 0072,5,CSIT
+243,Hệ điều hành 0243,4,SE
+374,Mạng máy tính 0374,3,DS
+241,Hệ cơ sở dữ liệu 0241,2,CS
+212,Cấu trúc dữ liệu 0212,5,IS
+115,Kỹ nghệ phần mềm 0115,4,SE
+496,Giải thuật 0496,5,CSIT
+380,Phát triển web 0380,5,IS
+430,Phát triển web 0430,3,DS
+84,Mạng máy tính 0084,5,IS
+141,Hệ cơ sở dữ liệu 0141,2,AI
+14,Mạng máy tính 0014,3,DS
+344,Mạng máy tính 0344,5,CSIT
+351,Hệ cơ sở dữ liệu 0351,4,BA
+86,Giải thuật 0086,3,DS
+143,Hệ điều hành 0143,4,BA
+364,Mạng máy tính 0364,5,IS
+419,Tìm kiếm thông tin 0419,4,SE
+147,Toán rời rạc 0147,4,SE
+123,Hệ điều hành 0123,4,SE
+16,Giải thuật 0016,5,CSIT
+488,Học máy 0488,5,CSIT
+122,Cấu trúc dữ liệu 0122,3,IT
+376,Giải thuật 0376,5,CSIT
+288,Học máy 0288,5,CSIT
+202,Cấu trúc dữ liệu 0202,3,IT
+53,Hệ điều hành 0053,2,AI
+474,Mạng máy tính 0474,3,IT
+472,Cấu trúc dữ liệu 0472,5,CSIT
+213,Hệ điều hành 0213,2,AI
+180,Phát triển web 0180,5,IS
+196,Giải thuật 0196,5,IS
+47,Toán rời rạc 0047,4,BA
+453,Hệ điều hành 0453,2,AI
+325,Kỹ nghệ phần mềm 0325,2,AI
+338,Học máy 0338,3,IT
+46,Giải thuật 0046,3,DS
+393,Hệ điều hành 0393,2,CS
+81,Hệ cơ sở dữ liệu 0081,2,CS
+131,Hệ cơ sở dữ liệu 0131,4,SE
+277,Toán rời rạc 0277,2,AI
+26,Giải thuật 0026,3,IT
+216,Giải thuật 0216,5,CSIT
+353,Hệ điều hành 0353,2,CS
+321,Hệ cơ sở dữ liệu 0321,2,CS
+323,Hệ điều hành 0323,4,SE
+273,Hệ điều hành 0273,2,CS
+78,Học máy 0078,3,DS
+401,Hệ cơ sở dữ liệu 0401,2,CS
+181,Hệ cơ sở dữ liệu 0181,2,AI
+124,Mạng máy tính 0124,5,IS
+370,Phát triển web 0370,3,IT
+469,Tìm kiếm thông tin 0469,2,AI
+66,Giải thuật 0066,3,IT
+192,Cấu trúc dữ liệu 0192,5,CSIT
+482,Cấu trúc dữ liệu 0482,3,IT
+62,Cấu trúc dữ liệu 0062,3,DS
+477,Toán rời rạc 0477,2,AI
+151,Hệ cơ sở dữ liệu 0151,4,BA
+381,Hệ cơ sở dữ liệu 0381,2,AI
+403,Hệ điều hành 0403,4,SE
+90,Phát triển web 0090,3,IT
+333,Hệ điều hành 0333,2,AI
+231,Hệ cơ sở dữ liệu 0231,4,BA
+13,Hệ điều hành 0013,2,AI
+486,Giải thuật 0486,3,DS
+222,Cấu trúc dữ liệu 0222,3,DS
+194,Mạng máy tính 0194,3,IT
+218,Học máy 0218,3,IT
+456,Giải thuật 0456,5,CSIT
+487,Toán rời rạc 0487,4,BA
+65,Kỹ nghệ phần mềm 0065,2,CS
+36,Giải thuật 0036,5,IS
+421,Hệ cơ sở dữ liệu 0421,2,AI
+263,Hệ điều hành 0263,4,BA
+233,Hệ điều hành 0233,2,CS
+161,Hệ cơ sở dữ liệu 0161,2,CS
+444,Mạng máy tính 0444,5,IS
+224,Mạng máy tính 0224,5,CSIT
+126,Giải thuật 0126,3,DS
+425,Kỹ nghệ phần mềm 0425,2,CS
+314,Mạng máy tính 0314,3,IT
+328,Học máy 0328,5,CSIT
+335,Kỹ nghệ phần mềm 0335,4,BA
+146,Giải thuật 0146,3,IT
+225,Kỹ nghệ phần mềm 0225,2,CS
+433,Hệ điều hành 0433,2,CS
+345,Kỹ nghệ phần mềm 0345,2,CS
+475,Kỹ nghệ phần mềm 0475,4,SE
+462,Cấu trúc dữ liệu 0462,3,DS
+236,Giải thuật 0236,5,IS
+264,Mạng máy tính 0264,5,CSIT
+432,Cấu trúc dữ liệu 0432,5,CSIT
+125,Kỹ nghệ phần mềm 0125,2,AI
+211,Hệ cơ sở dữ liệu 0211,4,SE
+286,Giải thuật 0286,3,DS
+55,Kỹ nghệ phần mềm 0055,4,BA
+490,Phát triển web 0490,3,IT
+291,Hệ cơ sở dữ liệu 0291,4,SE
+402,Cấu trúc dữ liệu 0402,3,IT
+119,Tìm kiếm thông tin 0119,4,BA
+306,Giải thuật 0306,3,IT
+255,Kỹ nghệ phần mềm 0255,4,BA
+135,Kỹ nghệ phần mềm 0135,4,BA
+57,Toán rời rạc 0057,2,CS
+435,Kỹ nghệ phần mềm 0435,4,SE
+334,Mạng máy tính 0334,3,DS
+358,Học máy 0358,3,DS
+17,Toán rời rạc 0017,2,CS
+372,Cấu trúc dữ liệu 0372,5,IS
+384,Mạng máy tính 0384,5,CSIT
+493,Hệ điều hành 0493,2,AI
+239,Tìm kiếm thông tin 0239,4,BA
+248,Học máy 0248,5,CSIT
+198,Học máy 0198,3,DS
+200,Phát triển web 0200,5,CSIT
+467,Toán rời rạc 0467,4,SE
+324,Mạng máy tính 0324,5,IS
+457,Toán rời rạc 0457,2,CS
+289,Tìm kiếm thông tin 0289,2,CS
+244,Mạng máy tính 0244,5,IS
+460,Phát triển web 0460,5,IS
+309,Tìm kiếm thông tin 0309,2,AI
+392,Cấu trúc dữ liệu 0392,5,CSIT
+221,Hệ cơ sở dữ liệu 0221,2,AI
+226,Giải thuật 0226,3,IT
+112,Cấu trúc dữ liệu 0112,5,CSIT
+290,Phát triển web 0290,3,IT
+107,Toán rời rạc 0107,4,SE
+138,Học máy 0138,3,IT
+186,Giải thuật 0186,3,IT
+193,Hệ điều hành 0193,2,CS
+166,Giải thuật 0166,3,DS
+87,Toán rời rạc 0087,4,BA
+454,Mạng máy tính 0454,3,DS
+19,Tìm kiếm thông tin 0019,4,SE
+451,Hệ cơ sở dữ liệu 0451,4,SE
+228,Học máy 0228,5,IS
+49,Tìm kiếm thông tin 0049,2,CS
+136,Giải thuật 0136,5,CSIT
+174,Mạng máy tính 0174,3,DS
+448,Học máy 0448,5,CSIT
+413,Hệ điều hành 0413,2,AI
+172,Cấu trúc dữ liệu 0172,5,IS
+42,Cấu trúc dữ liệu 0042,3,IT
+304,Mạng máy tính 0304,5,CSIT
+214,Mạng máy tính 0214,3,DS
+257,Toán rời rạc 0257,2,CS
+230,Phát triển web 0230,3,DS
+422,Cấu trúc dữ liệu 0422,3,DS
+170,Phát triển web 0170,3,IT
+356,Giải thuật 0356,5,IS
+480,Phát triển web 0480,5,CSIT
+156,Giải thuật 0156,5,IS
+29,Tìm kiếm thông tin 0029,2,AI
+21,Hệ cơ sở dữ liệu 0021,2,AI
+92,Cấu trúc dữ liệu 0092,5,IS
+253,Hệ điều hành 0253,2,AI
+137,Toán rời rạc 0137,2,CS
+160,Phát triển web 0160,5,CSIT
+409,Tìm kiếm thông tin 0409,2,CS
+152,Cấu trúc dữ liệu 0152,5,CSIT
+294,Mạng máy tính 0294,3,DS
+275,Kỹ nghệ phần mềm 0275,4,SE
+400,Phát triển web 0400,5,CSIT
+169,Tìm kiếm thông tin 0169,2,CS
+329,Tìm kiếm thông tin 0329,2,CS
+89,Tìm kiếm thông tin 0089,2,CS
+369,Tìm kiếm thông tin 0369,2,CS
+188,Học máy 0188,5,IS
+165,Kỹ nghệ phần mềm 0165,2,AI
+164,Mạng máy tính 0164,5,IS
+117,Toán rời rạc 0117,2,AI
+104,Mạng máy tính 0104,5,CSIT
+129,Tìm kiếm thông tin 0129,2,CS
+423,Hệ điều hành 0423,4,BA
+265,Kỹ nghệ phần mềm 0265,2,CS
+283,Hệ điều hành 0283,4,SE
+208,Học máy 0208,5,CSIT
+67,Toán rời rạc 0067,4,SE
+51,Hệ cơ sở dữ liệu 0051,4,SE
+411,Hệ cơ sở dữ liệu 0411,4,SE
+295,Kỹ nghệ phần mềm 0295,4,BA
+337,Toán rời rạc 0337,2,CS
+320,Phát triển web 0320,5,CSIT
+120,Phát triển web 0120,5,CSIT
+492,Cấu trúc dữ liệu 0492,5,IS
+298,Học máy 0298,3,IT
+366,Giải thuật 0366,3,DS
+150,Phát triển web 0150,3,DS
+410,Phát triển web 0410,3,IT
+173,Hệ điều hành 0173,2,AI
+279,Tìm kiếm thông tin 0279,4,BA
+272,Cấu trúc dữ liệu 0272,5,CSIT
+118,Học máy 0118,3,DS
+154,Mạng máy tính 0154,3,IT
+40,Phát triển web 0040,5,CSIT
+114,Mạng máy tính 0114,3,IT
+396,Giải thuật 0396,5,IS
+397,Toán rời rạc 0397,2,AI
+254,Mạng máy tính 0254,3,DS
+95,Kỹ nghệ phần mềm 0095,4,BA
+395,Kỹ nghệ phần mềm 0395,4,SE
+262,Cấu trúc dữ liệu 0262,3,DS
+418,Học máy 0418,3,IT
+357,Toán rời rạc 0357,2,AI
+18,Học máy 0018,3,IT
+157,Toán rời rạc 0157,2,AI
+443,Hệ điều hành 0443,4,SE
+179,Tìm kiếm thông tin 0179,4,SE
+177,Toán rời rạc 0177,2,CS
+246,Giải thuật 0246,3,DS
+105,Kỹ nghệ phần mềm 0105,2,CS
+48,Học máy 0048,5,CSIT
+220,Phát triển web 0220,5,IS
+336,Giải thuật 0336,5,CSIT
+201,Hệ cơ sở dữ liệu 0201,2,CS
+94,Mạng máy tính 0094,3,DS
+311,Hệ cơ sở dữ liệu 0311,4,BA
+102,Cấu trúc dữ liệu 0102,3,DS
+319,Tìm kiếm thông tin 0319,4,BA
+256,Giải thuật 0256,5,CSIT
+59,Tìm kiếm thông tin 0059,4,SE
+134,Mạng máy tính 0134,3,DS
+439,Tìm kiếm thông tin 0439,4,BA
+484,Mạng máy tính 0484,5,IS
+158,Học máy 0158,3,DS
+316,Giải thuật 0316,5,IS
+438,Học máy 0438,3,DS
+74,Mạng máy tính 0074,3,IT
+416,Giải thuật 0416,5,CSIT
+445,Kỹ nghệ phần mềm 0445,2,AI
+315,Kỹ nghệ phần mềm 0315,4,SE
+387,Toán rời rạc 0387,4,SE
+327,Toán rời rạc 0327,4,BA
+299,Tìm kiếm thông tin 0299,4,SE
+61,Hệ cơ sở dữ liệu 0061,2,AI
+431,Hệ cơ sở dữ liệu 0431,4,BA
+85,Kỹ nghệ phần mềm 0085,2,AI
+11,Hệ cơ sở dữ liệu 0011,4,SE
+271,Hệ cơ sở dữ liệu 0271,4,BA
+167,Toán rời rạc 0167,4,BA
+227,Toán rời rạc 0227,4,SE
+159,Tìm kiếm thông tin 0159,4,BA
+39,Tìm kiếm thông tin 0039,4,BA
+106,Giải thuật 0106,3,IT
+121,Hệ cơ sở dữ liệu 0121,2,CS
+303,Hệ điều hành 0303,4,BA
+302,Cấu trúc dữ liệu 0302,3,DS
+4,Mạng máy tính 0004,5,IS

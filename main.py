@@ -3,6 +3,7 @@ from __future__ import annotations
 import csv
 import time
 import threading
+import random
 from flask import Flask, jsonify, request
 
 app = Flask(__name__, static_folder='.', static_url_path='')
@@ -89,7 +90,24 @@ def load_data():
         })
 
     cluster_rank = {name: idx for idx, name in enumerate(CLUSTER_ORDER)}
-    heap_records = list(FULL_DATASET)
+    
+    heap_blocks = []
+    curr_block = []
+    for rec in FULL_DATASET:
+        if len(curr_block) >= 5:
+            heap_blocks.append(curr_block)
+            curr_block = []
+        curr_block.append(rec)
+    if curr_block:
+        while len(curr_block) < 5:
+            curr_block.append(None)
+        heap_blocks.append(curr_block)
+
+    for block in heap_blocks:
+        if random.random() < 0.15:
+            idx = random.randrange(5)
+            block[idx] = None
+
     sequential_records = sorted(FULL_DATASET, key=lambda r: r['student_id'])
     clustering_records = sorted(
         FULL_DATASET,
@@ -101,7 +119,7 @@ def load_data():
         partition_by_semester.setdefault(sem, []).append(rec)
 
     ORG_CACHE = {
-        'Heap': heap_records,
+        'Heap': heap_blocks,
         'Sequential': sequential_records,
         'Clustering': clustering_records,
         'Partitioning': partition_by_semester,
@@ -159,7 +177,17 @@ def _insert_into_caches(record):
         'score': record['score']
     })
 
-    ORG_CACHE['Heap'].append(FULL_DATASET[-1])
+    inserted_heap = False
+    for block in ORG_CACHE['Heap']:
+        for i in range(len(block)):
+            if block[i] is None:
+                block[i] = FULL_DATASET[-1]
+                inserted_heap = True
+                break
+        if inserted_heap:
+            break
+    if not inserted_heap:
+        ORG_CACHE['Heap'].append([FULL_DATASET[-1], None, None, None, None])
 
     seq = ORG_CACHE['Sequential']
     seq.append(FULL_DATASET[-1])
@@ -210,14 +238,18 @@ def _visible_window(blocks, first_match_idx, max_visible=6):
 def _simulate_query_for_manager(name, records, student_id, full_name, class_name, semester, block_capacity=5):
     started = time.perf_counter()
 
-    blocks = _pack_blocks(records, block_capacity)
+    if name == 'Heap':
+        blocks = records  # ORG_CACHE['Heap'] now holds explicit blocks
+    else:
+        blocks = _pack_blocks(records, block_capacity)
+        
     matches_count = 0
     first_match_block = -1
 
     for block_idx, block in enumerate(blocks):
         has_match_in_block = False
         for rec in block:
-            if _record_matches(rec, student_id, full_name, class_name, semester):
+            if rec is not None and _record_matches(rec, student_id, full_name, class_name, semester):
                 matches_count += 1
                 has_match_in_block = True
         if has_match_in_block and first_match_block < 0:
@@ -228,10 +260,13 @@ def _simulate_query_for_manager(name, records, student_id, full_name, class_name
     for idx in range(end_idx_start, end_idx):
         block_records = []
         for rec in blocks[idx]:
-            block_records.append({
-                **rec,
-                'isTarget': _record_matches(rec, student_id, full_name, class_name, semester)
-            })
+            if rec is None or rec.get('__empty'):
+                block_records.append({'__empty': True})
+            else:
+                block_records.append({
+                    **rec,
+                    'isTarget': _record_matches(rec, student_id, full_name, class_name, semester)
+                })
         visible_blocks.append({
             'blockNumber': idx + 1,
             'records': block_records

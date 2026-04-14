@@ -49,14 +49,69 @@ class BaseStorage {
 class HeapFile extends BaseStorage {
   constructor(blockCapacity) {
     super("Heap", blockCapacity);
+    this.blocks = [];
+  }
+
+  load(records) {
+    this.measure(() => {
+      this.blocks = [];
+      let currentBlock = [];
+      const clonedRecords = records.map((record) => this.cloneRecord(record));
+      
+      for (const record of clonedRecords) {
+        if (currentBlock.length >= this.blockCapacity) {
+          this.blocks.push(currentBlock);
+          currentBlock = [];
+        }
+        currentBlock.push(record);
+      }
+      if (currentBlock.length > 0) {
+        while (currentBlock.length < this.blockCapacity) {
+          currentBlock.push(null);
+        }
+        this.blocks.push(currentBlock);
+      }
+      
+      for (let i = 0; i < this.blocks.length; i++) {
+        if (Math.random() < 0.15) {
+          const idx = Math.floor(Math.random() * this.blockCapacity);
+          this.blocks[i][idx] = null;
+        }
+      }
+      
+      this.lastBlocksRead = this.blocks.length;
+    });
+    return this.buildOperationResult([], this.lastBlocksRead);
   }
 
   insert(record) {
     this.measure(() => {
-      this.records.push(this.cloneRecord(record));
-      this.lastBlocksRead = 1;
+      let inserted = false;
+      let blocksReadCount = 0;
+      for (let i = 0; i < this.blocks.length; i++) {
+        blocksReadCount++;
+        for (let j = 0; j < this.blocks[i].length; j++) {
+          if (!this.blocks[i][j] || this.blocks[i][j].__empty) {
+            this.blocks[i][j] = this.cloneRecord(record);
+            inserted = true;
+            break;
+          }
+        }
+        if (inserted) break;
+      }
+      if (!inserted) {
+        const newBlock = [this.cloneRecord(record)];
+        while (newBlock.length < this.blockCapacity) newBlock.push(null);
+        this.blocks.push(newBlock);
+        blocksReadCount++;
+      }
+      this.lastBlocksRead = blocksReadCount;
     });
     return this.buildOperationResult([], this.lastBlocksRead);
+  }
+
+  getBlockStatus() {
+    return this.blocks.map(block => ({ records: block }));
   }
 
   buildOperationResult(matches, blocksRead) {
@@ -369,7 +424,7 @@ function renderBlocks(container, managerName, beforeBlocks, afterBlocks, options
 
     const pills = displayRecords
       .map((r) => {
-        if (r.__empty) {
+        if (!r || r.__empty) {
           return '<div class="record-pill empty">(trống)</div>';
         }
         const isTarget = r.isTarget === true || targetKeys.has(getRecordKey(r));
@@ -619,7 +674,7 @@ async function handleInsertBtn() {
       displayBlocksRead = Math.max(1, afterDisplay.length - startBlock);
       noteText = "Chèn theo student_id tăng dần; có slot trống trong block để giảm dịch chuyển bản ghi.";
     } else if (name === "Heap") {
-      noteText = "Chèn nhanh vào cuối file (hoặc block cuối), không cần sắp xếp lại.";
+      noteText = "Chèn vào ô trống đầu tiên tìm thấy (do giả lập có bản ghi bị xóa). Nếu đầy, tạo block mới.";
     } else if (name === "Clustering") {
       noteText = "Chèn vào nhóm class_name tương ứng, giữ dữ liệu cùng lớp gần nhau.";
     } else if (name === "Partitioning") {
@@ -645,7 +700,7 @@ async function handleInsertBtn() {
         blocksRead: displayBlocksRead,
         executionTime: result.executionTime,
         showStateLabel: true,
-        showEmptySlots: name === "Sequential",
+        showEmptySlots: name === "Sequential" || name === "Heap",
         blockNumberOffset,
       });
 

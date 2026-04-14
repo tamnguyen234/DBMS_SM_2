@@ -1,7 +1,6 @@
 const BLOCK_CAPACITY = 5;
 const MAX_VISIBLE_BLOCKS = 6;
 const MANAGER_NAMES = ["Heap", "Sequential", "Clustering", "Partitioning"];
-const SEQUENTIAL_FILL_PER_BLOCK = 4;
 
 // Storage Classes
 class BaseStorage {
@@ -357,12 +356,42 @@ function flattenBlockRecords(blocks) {
 function packSequentialWithFreeSlots(records) {
   const sorted = [...records].sort((a, b) => a.student_id - b.student_id);
   const blocks = [];
-  for (let i = 0; i < sorted.length; i += SEQUENTIAL_FILL_PER_BLOCK) {
-    blocks.push({
-      blockNumber: blocks.length + 1,
-      records: sorted.slice(i, i + SEQUENTIAL_FILL_PER_BLOCK),
-    });
+  let cursor = 0;
+  let blockIndex = 0;
+
+  while (cursor < sorted.length) {
+    const reserveFreeSlot = sorted.length > BLOCK_CAPACITY && (blockIndex % 3 === 1);
+    const payloadSize = reserveFreeSlot ? (BLOCK_CAPACITY - 1) : BLOCK_CAPACITY;
+    const chunk = sorted.slice(cursor, cursor + payloadSize);
+    cursor += payloadSize;
+
+    if (reserveFreeSlot && chunk.length === payloadSize) {
+      // Rotate empty-slot position so it is not always at the block tail.
+      const holeIndex = ((blockIndex * 2) + 1) % BLOCK_CAPACITY;
+      const mixed = [];
+      let take = 0;
+      for (let slot = 0; slot < BLOCK_CAPACITY; slot++) {
+        if (slot === holeIndex) {
+          mixed.push({ __empty: true });
+        } else {
+          mixed.push(chunk[take]);
+          take += 1;
+        }
+      }
+      blocks.push({
+        blockNumber: blocks.length + 1,
+        records: mixed,
+      });
+    } else {
+      blocks.push({
+        blockNumber: blocks.length + 1,
+        records: chunk,
+      });
+    }
+
+    blockIndex += 1;
   }
+
   return blocks;
 }
 
@@ -669,10 +698,11 @@ async function handleInsertBtn() {
       const afterRecords = flattenBlockRecords(blocks);
       beforeDisplay = packSequentialWithFreeSlots(beforeRecords);
       afterDisplay = packSequentialWithFreeSlots(afterRecords);
-      const insertIdx = afterRecords.findIndex((r) => r.student_id === newRecord.student_id);
-      const startBlock = insertIdx >= 0 ? Math.floor(insertIdx / SEQUENTIAL_FILL_PER_BLOCK) : 0;
+      const startBlock = afterDisplay.findIndex((block) =>
+        (block.records || []).some((r) => r && !r.__empty && r.student_id === newRecord.student_id)
+      );
       displayBlocksRead = Math.max(1, afterDisplay.length - startBlock);
-      noteText = "Chèn theo student_id tăng dần; có slot trống trong block để giảm dịch chuyển bản ghi.";
+      noteText = "Chèn theo student_id tăng dần; một số block có free slot linh hoạt để giảm dịch chuyển bản ghi.";
     } else if (name === "Heap") {
       noteText = "Chèn vào ô trống đầu tiên tìm thấy (do giả lập có bản ghi bị xóa). Nếu đầy, tạo block mới.";
     } else if (name === "Clustering") {
@@ -681,7 +711,9 @@ async function handleInsertBtn() {
       noteText = "Chèn vào partition theo semester của bản ghi mới, không ảnh hưởng partition khác.";
     }
 
-    const effectiveSlots = name === "Sequential" ? SEQUENTIAL_FILL_PER_BLOCK : BLOCK_CAPACITY;
+    const effectiveSlots = name === "Sequential"
+      ? Math.max(1, Math.round(recordCountAfterInsert / Math.max(1, afterDisplay.length)))
+      : BLOCK_CAPACITY;
     const estimatedTotalBlocks = Math.max(1, Math.ceil(recordCountAfterInsert / effectiveSlots));
     const blockNumberOffset = Math.max(0, estimatedTotalBlocks - afterDisplay.length);
 
